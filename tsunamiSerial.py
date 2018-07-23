@@ -12,7 +12,6 @@ SOM1 = 0xf0
 SOM2 = 0xaa
 EOM  = 0x55
 
-print('Opening port on \"{}\"...\n'.format(serialPort))
 s = serial.Serial(port=serialPort, baudrate=57600, timeout=5) #define serial port with baudrate of 57.6kbps
 
 
