@@ -31,7 +31,7 @@ For those that would rather program in something more speedy than python or pref
 | `track_volume`      | `[track] [gain]`               | `-tv`                   | sets gain of given track to given gain|
 | `output_volume`     | `[output] [gain]`              | `-ov`                   | sets gain of output|
 | `loop`              |`[track] [output] [on/off]`     | `-l`                    | either loops or ends a loop of the given track on the given output|
-| `fade`              |`[track] [gain] [time] [stop]`  | `-f`                    | fades a track to the given gain over the given time, and then stops or doesn't|
+| `fade`              |`[track] [gain] [time] [stop]`  | `-f`                    | fades a track to the given gain over the given time, and then stops or doesn't (stop should be true or false)|
 | `sample_offset`     | `[output] [offset]`            | `-so`                   | offsets the sample rate of an output|
 | `queue`             | `[track] [output]`             | `-q`                    | plays track on output and pauses before any audio is played. It can then be resumed, starting the audio.|
 
