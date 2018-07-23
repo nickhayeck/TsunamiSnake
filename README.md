@@ -1,7 +1,7 @@
 # TsunamiSnake: the Tsunami WAV Trigger Serial Interface written in Python
 
 Library for controlling robertsonics' Tsunami WAV Trigger via FTDI serial
-written by Nicholas Hayeck
+written by Nicholas Hayeck (nick.hayeck@gmail.com)
 
 ### I. What is it?
 The tsunami-wav-trigger-python library is serial interface for robertsonics' Super Tsunami WAV Trigger written entirely in Python 3.7 that makes use of the micro-controller's FTDI serial port to communicate commands to the board and control its functions. This library conforms to the standards set out [here](https://robertsonics.com/tsunami-user-guide/#serial-control)
