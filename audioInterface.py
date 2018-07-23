@@ -46,12 +46,12 @@ serialControl = tsunamiSerial.TsunamiSerial(interfacePort)
 
 
 #info command
-if sys.argv[1] == 'info':
+if sys.argv[1] in ['info', '-i']:
     print(serialControl.getSysInfo())
 
 
 #Stop command
-if sys.argv[1] == 'stop':
+if sys.argv[1] in ['stop', '-s']:
     if len(sys.argv) == 2:
         serialControl.stop_all()
     elif len(sys.argv) != 4:
@@ -62,7 +62,7 @@ if sys.argv[1] == 'stop':
 
 
 #Resume command
-if sys.argv[1] == 'resume':
+if sys.argv[1] in ['resume', '-r']:
     if len(sys.argv) == 2:
         resumeAllPaused()
     elif len(sys.argv) != 4:
@@ -73,7 +73,7 @@ if sys.argv[1] == 'resume':
 
 
 #output_volume command
-if sys.argv[1] == 'output_volume':
+if sys.argv[1] in ['output_volume', '-ov']:
     if len(sys.argv) != 4:
         sys.exit('Too many or too few arguments for the output_volume command. It should be of the form: output_volume [output] [gain]')
     else:
@@ -81,7 +81,7 @@ if sys.argv[1] == 'output_volume':
         print("Volume command for output {} sent".format(sys.argv[2]))
 
 #track_volume command
-if sys.argv[1] == 'track_volume':
+if sys.argv[1] in ['track_volume', '-tv']:
     if len(sys.argv) != 4:
         sys.exit('Too many or too few arguments for the track_volume command. It should be of the form: track_volume [track] [gain]')
     else:
@@ -90,7 +90,7 @@ if sys.argv[1] == 'track_volume':
 
 
 #sample_offset command
-if sys.argv[1] == 'sample_offset':
+if sys.argv[1] == ['sample_offset', '-so']:
     if len(sys.argv) != 4:
         sys.exit('Too many or too few arguments for the sample_offset command. It should be of the form: sample_offset [output] [offset]')
     else:
@@ -99,7 +99,7 @@ if sys.argv[1] == 'sample_offset':
 
 
 #Play command
-if sys.argv[1] == 'play':
+if sys.argv[1] in ['play', '-p']:
     if len(sys.argv) != 4:
         sys.exit('Too many or too few arguments for the PLAY command. It should be of the form: play [track] [output]')
     else:
@@ -107,31 +107,33 @@ if sys.argv[1] == 'play':
         print("Play command for track {} sent".format(sys.argv[2]))
 
 #Pause command
-if sys.argv[1] == 'pause':
+if sys.argv[1] in ['pause','-pp']:
     if len(sys.argv) != 4:
         sys.exit('Too many or too few arguments for the PAUSE command. It should be of the form: pause [track] [output]')
     else:
         serialControl.controlTrack(sys.argv[2], 'pause', sys.argv[3])
         print("Pause command for track {} sent".format(sys.argv[2]))
 
-#Load command
-if sys.argv[1] == 'load':
+#queue command
+if sys.argv[1] in ['queue','-q']:
     if len(sys.argv) != 4:
-        sys.exit('Too many or too few arguments for the LOAD command. It should be of the form: load [track] [output]')
+        sys.exit('Too many or too few arguments for the QUEUE command. It should be of the form: queue [track] [output]')
     else:
         serialControl.controlTrack(sys.argv[2], 'load', sys.argv[3])
-        print("Load command for track {} onto output {} sent".format(sys.argv[2], sys.argv[3]))
+        print("Queue command for track {} onto output {} sent".format(sys.argv[2], sys.argv[3]))
 
 
 #Fade command
-if sys.argv[1] == 'fade':
+if sys.argv[1] in ['fade', '-f']:
     if len(sys.argv) != 6:
         sys.exit('Too many or too few arguments for the FADE command. It should be of the form: fade [track] [gain] [time] [stop]')
     else:
         serialControl.trackFade(sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
         print("Fading track {} {}dB over {} sent".format(sys.argv[2], sys.argv[3], sys.argv[4]))
+
+
 #Loop command
-if sys.argv[1] == 'loop':
+if sys.argv[1] in ['loop', '-l']:
     if len(sys.argv) != 5:
         sys.exit('Too many or too few arguments for the LOOP command. It should be of the form: loop [track] [output] [on/off]')
     if sys.argv[5] not in ['on', 'off']:
