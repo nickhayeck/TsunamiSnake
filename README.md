@@ -30,6 +30,6 @@ For those that would rather program in something more speedy than python or pref
  `loop [track] [output] [on/off]` - either loops or ends a loop of the given track on the given output<br>
  `fade [track] [gain] [time] [stop]` - fades a track to the given gain over the given time, and then stops or doesn't<br>
  `sample_offset [output] [offset]` - offsets the sample rate of an output<br>
- `load [track] [output]` - loads a given track onto a given output<br>
- 
+ `load [track] [output]` - plays a track on an output and pauses before any audio is played. It can then be resumed, starting the audio.<br>
+
  All gain values must be between -70 and +10, outputs between 1-8, and offsets between -32768 & 32767, inclusive.
