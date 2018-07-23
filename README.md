@@ -21,8 +21,8 @@ The track and output parameters are fairly self-explanatory, but the `controlCod
 For those that would rather program in something more speedy than python or prefer another language, this wrapper class has been created to make the interface availible in any language with command-line access. To use the wrapper class, run the python file in the terminal or command prompt with your arguments like so: `python audioInterface.py [command [command args]]`. This command can be automated within another program quite easily, using whatever terminal accessing commands that language provides (e.g. a `system()` call in C++).<br><br> A list of commands and their arguments are found below:
 
 
-|           Command   |     Arguments                  |    Abbreviation         |     Description                                                                                          |
-|---------------------|:------------------------------:|:-----------------------:|---------------------------------------------------------------------------------------------------------:|
+|    Command   | Arguments |    Abbreviation         |     Description                            |
+|---------------------|:------------------------------:|:-----------------------:|---------------------------------------------------------------------------------------------------------|
 |`info`               |                                | `-i`                    | prints board version and system info       |       
 | `play`              | `[track] [output]`             | `-p`                    | plays given track on given output|
 | `pause`             | `[track] [output]`             | `-pp`                   | pauses given track on given output|
@@ -31,7 +31,7 @@ For those that would rather program in something more speedy than python or pref
 | `track_volume`      | `[track] [gain]`               | `-tv`                   | sets gain of given track to given gain|
 | `output_volume`     | `[output] [gain]`              | `-ov`                   | sets gain of output|
 | `loop`              |`[track] [output] [on/off]`     | `-l`                    | either loops or ends a loop of the given track on the given output|
-| `fade`              |`[track] [gain] [time] [stop]`  | `-f`                    | fades a track to the given gain over the given time, and then stops or doesn't|
+| `fade`              |`[track] [gain] [time] [stop]`  | `-f`                    | fades a track to the given gain over the given time, and then stops or doesn't (stop should be true or false)|
 | `sample_offset`     | `[output] [offset]`            | `-so`                   | offsets the sample rate of an output|
 | `queue`             | `[track] [output]`             | `-q`                    | plays track on output and pauses before any audio is played. It can then be resumed, starting the audio.|
 
