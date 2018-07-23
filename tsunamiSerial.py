@@ -103,7 +103,7 @@ class TsunamiSerial:
         timeBytesLSB, timeBytesMSB = littleEndianSplit(time)
 
 
-        stopBytes = 0x01 if stop else 0x00
+        stopBytes = 0x01 if bool(stop) else 0x00
 
         self.sClass.write([self.SOM1, self.SOM2, 0x0c, 0x0a, trackBytesLSB, trackBytesMSB, gainBytesLSB, gainBytesMSB, timeBytesLSB, timeBytesMSB, stopBytes, self.EOM])
 
