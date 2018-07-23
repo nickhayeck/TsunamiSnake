@@ -18,7 +18,11 @@ interfacePort = 'COM4'
 
 
 if len(sys.argv)  == 1:
-    sys.exit('Too few arguments')
+    sys.exit("Command Line Interface for the Tsunami WAV Trigger"+
+          "\n\nUsage: python audioInterface.py [command] [command args]"+
+          "\nExample: python audioInterface.py play 1 1"+
+          "\n\nCommands:\n info\n play\n pause\n stop\n resume\n track_volume\n output_volume\n loop\n fade\n sample_offset\n load\n"+
+          "\n\n\nRefer to documentation for more info on each command")
 
 if interfacePort == '':
     print("\n\n+---------------------------------------------+")
