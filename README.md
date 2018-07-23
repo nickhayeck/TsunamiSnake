@@ -21,8 +21,8 @@ The track and output parameters are fairly self-explanatory, but the `controlCod
 For those that would rather program in something more speedy than python or prefer another language, this wrapper class has been created to make the interface availible in any language with command-line access. To use the wrapper class, run the python file in the terminal or command prompt with your arguments like so: `python audioInterface.py [command [command args]]`. This command can be automated within another program quite easily, using whatever terminal accessing commands that language provides (e.g. a `system()` call in C++).<br><br> A list of commands and their arguments are found below:
 
 
-|           Command   |     Arguments                  |    Abbreviation         |     Description                                                                                          |
-|---------------------|:------------------------------:|:-----------------------:|---------------------------------------------------------------------------------------------------------:|
+|    Command   | Arguments |    Abbreviation         |     Description                            |
+|---------------------|:------------------------------:|:-----------------------:|---------------------------------------------------------------------------------------------------------|
 |`info`               |                                | `-i`                    | prints board version and system info       |       
 | `play`              | `[track] [output]`             | `-p`                    | plays given track on given output|
 | `pause`             | `[track] [output]`             | `-pp`                   | pauses given track on given output|
