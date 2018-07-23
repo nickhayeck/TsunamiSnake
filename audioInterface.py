@@ -26,7 +26,8 @@ if '-h' in sys.argv or '--help' in sys.argv:
           "\n\nCommands:\n info\n play\n pause\n stop\n resume\n track_volume\n output_volume\n loop\n fade\n sample_offset\n load\n"+
           "\n\n\nRefer to documentation for more info on each command")
     sys.exit(0)
-
+#for logging purposes; port does not actually open here, but rather is opened during the import statement. A terrible way to do it... I know.    
+print('Opening port on \"{}\"...\n'.format(serialPort))
 
 #info command
 if sys.argv[1] == 'info':
