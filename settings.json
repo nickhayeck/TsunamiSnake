@@ -1,0 +1,15 @@
+{
+
+  "Reporting" : true,
+  "COM Port"  : "",
+  "tracklist" : [
+                 {"name" : "example track 1", "id" : 1}
+                 {"name" : "example track 2", "id" : 2}
+                ],
+
+  "outputlist": [
+                 {"name" : "example speaker 1", "id" : 1}
+                 {"name" : "example speaker 2", "id" : 2}
+                ]
+
+}
