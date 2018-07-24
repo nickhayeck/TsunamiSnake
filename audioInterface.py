@@ -78,7 +78,7 @@ if sys.argv[1] in ['outputlist', '-ol']:
 
 print('Opening port on \"{}\"...\n'.format(interfacePort))
 
-serialControl = tsunamiSerial.TsunamiSerial(interfacePort)
+serialControl = tsunamiSerial.TsunamiSerial(interfacePort, False)
 
 
 #info command
