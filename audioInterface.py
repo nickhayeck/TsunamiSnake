@@ -1,14 +1,19 @@
 import sys
 import serial
 import tsunamiSerial
+import json
 
 
     ##################################################
-    # Serial Port to be used. Look in device manager #
-    # for COM port name. Should look like "COM4"     #
+    #                 json reader                    #
     ##################################################
 
-interfacePort = 'COM4'
+with open('settings.json') as j:
+    data = json.load(j)
+
+
+
+interfacePort = data['Port']
 
 
 ##################################################
@@ -26,7 +31,7 @@ if len(sys.argv)  == 1:
 
 if interfacePort == '':
     print("\n\n+---------------------------------------------+")
-    print("| PLEASE SET SERIAL PORT IN audioInterface.py |")
+    print("| PLEASE SET SERIAL PORT IN settings.json |")
     print("+---------------------------------------------+\n")
 
     sys.exit(1)
