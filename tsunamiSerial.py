@@ -11,11 +11,12 @@ class TsunamiSerial:
 
 
 
-    def __init__(self, portal):
+    def __init__(self, portal, report):
         self.sClass = serial.Serial(port=portal, baudrate=57600, timeout=5) #define serial port with baudrate of 57.6kbps
         self.SOM1 = 0xf0
         self.SOM2 = 0xaa
         self.EOM  = 0x55
+        self.reporting = report
 
 
 
