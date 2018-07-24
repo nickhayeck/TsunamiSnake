@@ -24,7 +24,9 @@ For those that would rather program in something more speedy than python or just
 |       Command       |            Arguments            |     Abbreviation         |     Description                            |
 |---------------------|:-------------------------------:|:------------------------:|--------------------------------------------|
 |`help`               |  *None*                         | `-h`                     | displays usage and a list of commands      |
-|`info`               |  *None*                         | `-i`                     | prints board version and system info       |       
+|`info`               |  *None*                         | `-i`                     | prints board version and system info       |
+|`tracklist`          |  *None*                         | `-tl`                    | prints list of tracks as defined in settings.json     |
+|`outputlist`         |  *None*                         | `-ol`                    | prints list of outputs as defined in settings.json       |       
 | `play`              | `[track] [output]`              | `-p`                     | plays given track on given output          |
 | `pause`             | `[track] [output]`              | `-pp`                    | pauses given track on given output         |
 | `stop`              | `[track] [output]`              | `-s`                     | stops all tracks if no arguments are given, otherwise stops given track on given output|
@@ -40,7 +42,7 @@ For those that would rather program in something more speedy than python or just
 
 
 
-### V. The settings files
+### V. The settings file
 
  The settings file is where the user can customize the library to their liking. If you are uncomfortable with JSON, read up on this widespread format [here](https://www.w3schools.com/js/js_json_intro.asp). Two of the options within this settings file are crucial to the way the program runs and the other two are completely optional, but are highly suggested to reduce the possibility of error in automated systems. </br> Below is a table going over the options currently available in the settings.json file:</br>
 

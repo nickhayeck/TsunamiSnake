@@ -9,11 +9,11 @@ import json
     ##################################################
 
 with open('settings.json') as j:
-    data = json.load(j)
+    jsonData = json.load(j)
 
 
 
-interfacePort = data['Port']
+interfacePort = jsonData['Port']
 
 
 ##################################################
@@ -30,9 +30,9 @@ if len(sys.argv)  == 1:
           "\n\n\nRefer to documentation for more info on each command")
 
 if interfacePort == '':
-    print("\n\n+---------------------------------------------+")
+    print("\n\n+-----------------------------------------+")
     print("| PLEASE SET SERIAL PORT IN settings.json |")
-    print("+---------------------------------------------+\n")
+    print("+-----------------------------------------+\n")
 
     sys.exit(1)
 
@@ -44,6 +44,37 @@ if '-h' in sys.argv or '--help' in sys.argv:
           "\n\nCommands:\n info\n play\n pause\n stop\n resume\n track_volume\n output_volume\n loop\n fade\n sample_offset\n load\n"+
           "\n\n\nRefer to documentation for more info on each command")
     sys.exit(0)
+
+
+############################
+# Listing Utility Commands #
+############################
+
+
+#tracklist command
+if sys.argv[1] in ['tracklist', '-tl']:
+    #formatting
+     print('|{:^20}|{:^20}|'.format('Name', 'ID'))
+     print('-'*43)
+     for i in jsonData['tracklist']:
+        print('|{:^20}|{:^20}|'.format(i['name'], i['id']))
+
+
+
+#outputlist command
+if sys.argv[1] in ['outputlist', '-ol']:
+    #formatting
+     print('|{:^20}|{:^20}|'.format('Name', 'ID'))
+     print('-'*43)
+     for i in jsonData['outputlist']:
+        print('|{:^20}|{:^20}|'.format(i['name'], i['id']))
+
+
+
+
+###################
+# Serial Commands #
+###################
 
 print('Opening port on \"{}\"...\n'.format(interfacePort))
 
